@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import Home from './pages/home/Home.jsx';
 import Header from './components/header/Header.jsx';
+import Book_info from './pages/book_info/Book_info.jsx';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home/>} />
+        <Route path="/book-info" element={<Book_info/>} />
       </Routes>
     </Router>
   );

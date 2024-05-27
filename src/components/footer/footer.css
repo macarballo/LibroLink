@@ -1,0 +1,18 @@
+.footer {
+    width: 100%;
+    margin-top: 2.5rem;
+    background-color: rgba(200, 171, 125, 1); /* Dark background for the footer */
+    color: black; /* White text color */
+    text-align: center; /* Center-align text */
+    padding: 20px 10px; /* Vertical and horizontal padding */
+    font-size: 12px; /* Font size for the text */
+    font-weight: bold;
+    bottom: 0;
+    left: 0;
+}
+
+.footer p {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    line-height: 1.5; /* Line spacing for better readability */
+}
