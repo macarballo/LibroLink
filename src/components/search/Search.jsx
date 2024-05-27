@@ -1,7 +1,38 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './search.css';
 
 function Search() {
+
+    const [query, setQuery] = useState('');
+    const [books, setBooks] = useState([]);
+
+    const handleInputChange = (event) => {
+        setQuery(event.target.value);
+    };
+
+    const handleSearch = async () => {
+        const formattedQuery = query.split(' ').join('+');
+        try {
+            const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${formattedQuery}`);
+            if (!response.ok) {
+                throw new Error('Failed to fetch data: ' + response.status);
+            }
+            const data = await response.json();
+            const results = data.items.map(book => ({
+                title: book.volumeInfo.title,
+                thumbnail: book.volumeInfo.imageLinks?.thumbnail,
+                authors: book.volumeInfo.authors || ['Unknown Author'],
+                availability: book.saleInfo.saleability === 'FOR_SALE' ? 'Available' : 'Not Available'
+            }));
+            console.log(results);
+            setBooks(results);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
+
+
+
     return (
         <>
         <div className="search">
@@ -12,8 +43,8 @@ function Search() {
                 </div>
 
                 <div className="search-bar-container">
-                    <input type="text" placeholder="Search by Book Title / Author / Publisher / ISBN" className="search-input"/>
-                    <button className="search-button">Search</button>
+                    <input type="text" placeholder="Search by Book Title / Author / Publisher / ISBN" className="search-input" value={query} onChange={handleInputChange}/>
+                    <button className="search-button" onClick={handleSearch}>Search</button>
                 </div>
                 
             </div>
