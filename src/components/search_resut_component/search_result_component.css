@@ -1,25 +1,23 @@
-.search {
+.search-result {
     background-image: url('/home-bg.jpg');
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat; /* Prevents repeating the background image */
-    height: 769px; /* Adjust based on your preference */
+    height: 152px; /* Adjust based on your preference */
     width: 100vw; /* This sets the width to the full viewport width */
     display: flex;
-    flex-direction: column;  
-    margin-top: 6rem;
+    margin-top: -22.5rem;
 }
 
-.search-bar {
+.search-result-bar {
     display: flex;
-    margin-top: 9rem;
+    flex-direction: row;
 }
-
-.logos-container, .search-bar-container {
+.logos-searchresult-container, .search-bar-searchresult-container{
     display: flex;
+    flex-direction: row;
+    margin-top: 3rem;
 }
 
-.logos-container {
+.logos-searchresult-container {
     margin-left: 12.5rem;
     margin-right: 23rem;
 }
@@ -31,16 +29,6 @@
 
 .brown-logo-text-only-style {
     height: 70px;
-}
-
-.search-title-container{
-    margin-top: 2.5rem;
-    margin-left: 12.5rem;
-    width: 705px;
-}
-
-.search-title {
-    color: black;
 }
 
 .search-input {
