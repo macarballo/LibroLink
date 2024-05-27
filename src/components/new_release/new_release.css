@@ -2,6 +2,54 @@
     margin-left: 11rem;
 }
 
-.new-release-style-caption h3 {
-    color: black
+.new-release-container {
+    padding: 10px;
+    background-color: white; /* Light gray background */
+}
+
+h3 {
+    color: black;
+}
+
+.book-title-style {
+    line-height: 20px;
+}
+
+h4 {
+    color: black;
+}
+
+.new-release-style-caption {
+    margin-left: 5rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Adjust the number of columns as needed */
+    gap: 15px;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+.grid-item {
+    background-color: white;
+    padding: 5px;
+    border: 1px solid #ccc; /* Light gray border */
+}
+
+.book-cover {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.book-info h4 {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.book-info p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #666; /* Dark gray text */
 }
