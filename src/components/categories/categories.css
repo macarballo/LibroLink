@@ -1,0 +1,55 @@
+.categories-container {
+    margin-top: 10rem;
+}
+.categories-new-release-container{
+    padding: 10px;
+    background-color: white; /* Light gray background */
+    margin-top: 2rem;
+}
+
+h3 {
+    color: black;
+}
+
+.categories-book-title-style {
+    line-height: 20px;
+}
+
+h4 {
+    color: black;
+}
+
+.categories-style-caption {
+    margin-left: 5rem;
+}
+
+.categories-grid-container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); /* Adjust the number of columns as needed */
+    gap: 15px;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+.categories-grid-item {
+    background-color: white;
+    padding: 5px;
+    border: 1px solid #ccc; /* Light gray border */
+}
+
+.categories-book-cover {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.categories-book-info h4 {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.categories-book-info p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #666; /* Dark gray text */
+}

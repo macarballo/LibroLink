@@ -7,7 +7,7 @@ function Header() {
     <header className="header">
         <nav className="navigation">
             <a href="/">Home</a>
-            <a href="#category">Category</a>
+            <a href="/category">Category</a>
             <a href="#mybooks">My Books</a>
         </nav>
     </header>
