@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './search_result_component.css';
 
 function Search_result_component() {
     const location = useLocation();
-    const [query, setQuery] = useState('');
+    const navigate = useNavigate();
     const [books, setBooks] = useState([]);
 
-    // Check if location state has data from search
     React.useEffect(() => {
         if (location.state && location.state.books) {
             setBooks(location.state.books);
         }
     }, [location.state]);
+
+    const handleBookClick = (bookId) => {
+        // Navigate to book info page with book ID
+        navigate(`/book-info/${bookId}`);
+    };
 
     const handleBack = () => {
         window.history.back(); // Go back to previous route
@@ -28,7 +32,7 @@ function Search_result_component() {
 
                 <div className='grid-container'>
                     {books.map((book, index) => (
-                        <div key={index} className='grid-item'>
+                        <div key={index} className='grid-item' onClick={() => handleBookClick(book.id)}>
                             <img src={book.thumbnail} alt={`Cover of ${book.title}`} className='book-cover' />
                             <div className='book-info'>
                                 <h4 className='book-title-style'>{book.title}</h4>

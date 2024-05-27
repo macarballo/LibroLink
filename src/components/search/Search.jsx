@@ -22,6 +22,7 @@ function Search() {
                 throw new Error('No items found in response');
             }
             const results = data.items.slice(0, 10).map(book => ({
+                id: book.id,
                 title: book.volumeInfo.title,
                 thumbnail: book.volumeInfo.imageLinks?.thumbnail,
                 authors: book.volumeInfo.authors || ['Unknown Author'],
