@@ -1,8 +1,13 @@
-# React + Vite
+## Project Name: Librolink
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A user-friendly digital system for online libraries, enabling users to access a variety of digital e-book resources easily.
 
-Currently, two official plugins are available:
+## Installation
+1. Clone the repository to your local machine using git clone <repository-url>  
+2. Install the dependencies by running ```npm install```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Usage
+1. Start the development server using ```npm run dev```  
+2. Go to the local host shown in your terminal
+3. Start editing the project files in your favorite code editor  
+4. Changes will be automatically hot-reloaded in the browser
