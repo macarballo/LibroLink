@@ -9,44 +9,26 @@ function Interests() {
             </div>
             <div className="interests">
                 <div className="interest-section">
-                    <h3>Fiction Books</h3>
                     <div className="row-1"> 
-                        <button className="interest-btn-style">Drama</button>
-                        <button className="interest-btn-style">Horror</button>
+                        <button className="interest-btn-style">Fiction</button>
+                        <button className="interest-btn-style">Non-Fiction</button>
+                        <button className="interest-btn-style">Science</button>
+                        <button className="interest-btn-style">History</button>
+                        <button className="interest-btn-style">Biography</button>
+                        <button className="interest-btn-style">Children</button>
+                        <button className="interest-btn-style">Thriller</button>
+                        <button className="interest-btn-style">Fantasy</button>
                     </div>
 
                     <div className="row-2">
+                        <button className="interest-btn-style">Romance</button>
                         <button className="interest-btn-style">Mystery</button>
-                        <button className="interest-btn-style">Sci-Fi</button>
+                        <button className="interest-btn-style">Self Help</button>
+                        <button className="interest-btn-style">Health</button>
+                        <button className="interest-btn-style">Cookbooks</button>
+                        <button className="interest-btn-style">SciFi</button>
+                        <button className="interest-btn-style">Business</button>
                     </div>     
-                </div>
-                <div className="interest-section">
-                    <h3>Non - Fiction Books</h3>
-                    <div className="row-1">
-                        <button className="interest-btn-style">Art</button>
-                        <button className="interest-btn-style">Biography</button>
-                    </div>
-                    <div className="row-2">
-                        <button className="interest-btn-style">Sports</button>
-                        <button className="interest-btn-style">Travel</button>
-                    </div>
-                
-                </div>
-                <div className="interest-section">
-                    <h3>Genres</h3>
-                    <div className="row-1">
-                        <button className="interest-btn-style">Blues</button>
-                        <button className="interest-btn-style">Classical</button>
-                        <button className="interest-btn-style">Folk</button>
-                        <button className="interest-btn-style">Hip-Hop</button>
-                    </div>
-                    
-                    <div className="row-2">
-                        <button className="interest-btn-style">Rap</button>
-                        <button className="interest-btn-style">Reggae</button>
-                        <button className="interest-btn-style">Rock</button>
-                        <button className="explore-button">Explore</button>
-                    </div> 
                 </div>
             </div>
             

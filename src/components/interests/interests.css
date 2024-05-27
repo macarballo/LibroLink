@@ -2,6 +2,7 @@
     height: 300px;
     width: 100vw;
     overflow-x: hidden;
+    margin-bottom: -5rem;
 }
 
 .interests-caption {
@@ -30,7 +31,7 @@
 }
 
 .interest-btn-style {
-    width: 109px;
+    width: 150px;
     height: 40px;
     background-color: white;
     color: black;
