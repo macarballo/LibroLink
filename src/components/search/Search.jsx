@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './search.css';
+import { useNavigate } from 'react-router-dom';
 
 function Search() {
-
+    const navigate = useNavigate();
     const [query, setQuery] = useState('');
-    const [books, setBooks] = useState([]);
 
     const handleInputChange = (event) => {
         setQuery(event.target.value);
@@ -12,6 +12,7 @@ function Search() {
 
     const handleSearch = async () => {
         const formattedQuery = query.split(' ').join('+');
+        console.log(query);
         try {
             const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${formattedQuery}`);
             if (!response.ok) {
@@ -25,7 +26,7 @@ function Search() {
                 availability: book.saleInfo.saleability === 'FOR_SALE' ? 'Available' : 'Not Available'
             }));
             console.log(results);
-            setBooks(results);
+            navigate('/search-result', { state: { books: results } });
         } catch (error) {
             console.error('Error fetching data:', error);
         }
@@ -34,7 +35,6 @@ function Search() {
 
 
     return (
-        <>
         <div className="search">
             <div className="search-bar">
                 <div className="logos-container">
@@ -46,17 +46,14 @@ function Search() {
                     <input type="text" placeholder="Search by Book Title / Author / Publisher / ISBN" className="search-input" value={query} onChange={handleInputChange}/>
                     <button className="search-button" onClick={handleSearch}>Search</button>
                 </div>
-                
             </div>
-            
+
             <div className="search-title-container">
                 <h1 className="search-title">
                     Elevating Community Library Management with Comprehensive Digital Integration
                 </h1>
             </div>
-            
         </div>
-        </>
     );
 }
 
