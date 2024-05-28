@@ -45,7 +45,7 @@ function Book_info() {
   return (
     <div>
       <Header/>
-      <div className="book-details">
+        <div className="book-details">
             <img src={bookDetails.thumbnail} alt={`Cover of ${bookDetails.title}`} />
             <h2>{bookDetails.title}</h2>
             <p>Authors: {bookDetails.authors.join(', ')}</p>

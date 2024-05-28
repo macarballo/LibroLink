@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import './categories.css';
+import Footer from '../footer/Footer';
 
 function Categories() {
+    const location = useLocation();
     const categories = [
         { key: 'newReleases', query: 'orderBy=newest' },
         { key: 'fiction', query: 'subject:fiction&orderBy=newest' },
@@ -34,6 +37,7 @@ function Categories() {
                     }
                     const data = await response.json();
                     const formattedBooks = data.items.map(book => ({
+                        id: book.id,
                         title: book.volumeInfo.title,
                         thumbnail: book.volumeInfo.imageLinks?.thumbnail || 'placeholder-image-url.jpg',
                         authors: book.volumeInfo.authors?.join(', ') || 'Unknown Author',
@@ -44,26 +48,33 @@ function Categories() {
                     console.error('Error fetching books:', error);
                 }
             }
+
+            const hash = location.hash.replace('#', '');
+            if (hash) {
+                setTimeout(() => {
+                    const element = document.getElementById(hash);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 1000);
+            }
         }
         fetchBooks();
-    }, []);
+    }, [location.hash]);
 
     return (
         <div className='categories-container'>
             {categories.map(category => (
                 <Section key={category.key} title={toTitleCase(category.key.replace(/([A-Z])/g, ' $1').trim())} books={booksByCategory[category.key] || []} />
             ))}
+            <Footer/>
         </div>
     );
 }
 
-function toTitleCase(str) {
-    return str.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-}
-
 function Section({ title, books }) {
     return (
-        <div className='categories-section-container'>
+        <div id={title.toLowerCase()} className='categories-section-container'>
             <h3 className='categories-style-caption'>{title}</h3>
             <div className='categories-grid-container'>
                 {books.map((book, index) => (
@@ -79,6 +90,10 @@ function Section({ title, books }) {
             </div>
         </div>
     );
+}
+
+function toTitleCase(str) {
+    return str.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 }
 
 export default Categories;
