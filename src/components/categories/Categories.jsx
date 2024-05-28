@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './categories.css';
 import Footer from '../footer/Footer';
 
 function Categories() {
+    const navigate = useNavigate();
     const location = useLocation();
     const categories = [
         { key: 'newReleases', query: 'orderBy=newest' },
@@ -65,20 +66,24 @@ function Categories() {
     return (
         <div className='categories-container'>
             {categories.map(category => (
-                <Section key={category.key} title={toTitleCase(category.key.replace(/([A-Z])/g, ' $1').trim())} books={booksByCategory[category.key] || []} />
+                <Section key={category.key} title={toTitleCase(category.key.replace(/([A-Z])/g, ' $1').trim())} books={booksByCategory[category.key] || []} navigate={navigate} />
             ))}
             <Footer/>
         </div>
     );
 }
 
-function Section({ title, books }) {
+function Section({ title, books, navigate }) {
+    const handleBookClick = (bookId) => {
+        navigate(`/book-info/${bookId}`);
+    };
+
     return (
         <div id={title.toLowerCase()} className='categories-section-container'>
             <h3 className='categories-style-caption'>{title}</h3>
             <div className='categories-grid-container'>
                 {books.map((book, index) => (
-                    <div key={index} className='categories-grid-item'>
+                    <div key={index} className='categories-grid-item' onClick={() => handleBookClick(book.id)}>
                         <img src={book.thumbnail} alt={`Cover of ${book.title}`} className='categories-book-cover' />
                         <div className='categories-book-info'>
                             <h4>{book.title}</h4>
