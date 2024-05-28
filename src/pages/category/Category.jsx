@@ -1,8 +1,7 @@
-import { useState } from 'react';
 import './category.css';
 import Header from '../../components/header/Header';
-import Footer from '../../components/footer/Footer';
 import Categories from '../../components/categories/Categories';
+import Footer from '../../components/footer/Footer';
 
 function Category() {
   return (
