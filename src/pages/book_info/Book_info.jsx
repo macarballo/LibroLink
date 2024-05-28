@@ -6,7 +6,10 @@ import { useParams } from 'react-router-dom';
 function Book_info() {
   const { bookId } = useParams();
     const [bookDetails, setBookDetails] = useState(null);
-
+    const stripHTMLTags = (str) => {
+        if (!str) return '';
+        return str.replace(/<\/?[^>]+(>|$)/g, '');
+    };
     useEffect(() => {
         const fetchBookDetails = async () => {
             try {
@@ -21,7 +24,7 @@ function Book_info() {
                 setBookDetails({
                     title: data.volumeInfo.title,
                     authors: data.volumeInfo.authors || ['Unknown Author'],
-                    description: data.volumeInfo.description || 'No description available',
+                    description: stripHTMLTags(data.volumeInfo.description) || 'No description available',
                     thumbnail: data.volumeInfo.imageLinks?.thumbnail,
                     categories: data.volumeInfo.categories || ['Unknown Category'],
                     pageCount: data.volumeInfo.pageCount,
