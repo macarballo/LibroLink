@@ -42,7 +42,7 @@ function New_Release() {
 
   return (
     <div className="new-release-container">
-      <h3 className="new-release-style-caption">New Releases</h3>
+      <h3 className="new-release-style-caption"><br></br>New Releases</h3>
       <div className="grid-container">
         {books.map((book, index) => (
           <div
