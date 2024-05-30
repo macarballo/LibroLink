@@ -1,6 +1,5 @@
 /* Overall page styling */
 .book-details {
-    
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
@@ -9,6 +8,7 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);  /* Added subtle shadow for depth */
 }
 
 .book-details img {
@@ -21,24 +21,28 @@
 .book-details h2 {
     color: #333;
     font-size: 24px;
+    font-weight: 500;  /* Slightly bolder for better legibility */
 }
 
 .book-details p {
     color: #666;
     font-size: 16px;
-    line-height: 1.6;
-    width: 100%;
+    line-height: 1.8;  /* Improved line spacing */
+    width: 90%;  /* Adjusted width for better text wrapping */
     text-align: left;
+    margin: 0 auto;  /* Centered paragraphs within the container */
 }
 
 /* Links styling */
 .book-details a {
     color: #1a0dab;
     text-decoration: none;
+    transition: color 0.3s;  /* Smooth transition for hover effect */
 }
 
 .book-details a:hover {
     text-decoration: underline;
+    color: #0d47a1;  /* Darker blue on hover for better visibility */
 }
 
 /* Make the description area more noticeable */
@@ -53,7 +57,7 @@
 /* Additional styling for metadata */
 .metadata {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));  /* Responsive grid */
     gap: 10px;
     width: 100%;
 }
@@ -62,4 +66,69 @@
     padding: 10px;
     background: #f9f9f9;
     border-radius: 4px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .book-details {
+        padding: 10px;  /* Reduced padding on smaller screens */
+        gap: 15px;
+    }
+
+    .book-details h2 {
+        font-size: 20px;  /* Smaller heading on small screens */
+    }
+
+    .book-details p {
+        font-size: 14px;  /* Smaller text on small screens */
+    }
+
+    .metadata {
+        grid-template-columns: 1fr;  /* Stack metadata vertically on small screens */
+    }
+}
+
+/* Button-like styling for specific links */
+.book-details a.button {
+    color: #fff;
+    background-color: #007BFF;  /* Primary button color */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;  /* Necessary for proper spacing and alignment */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.book-details a.button:hover {
+    background-color: #0056b3;  /* Darker blue on hover */
+    transform: scale(1.05);  /* Slightly larger on hover for effect */
+}
+
+.book-details a.button:active {
+    background-color: #004080;  /* Even darker when pressed */
+    transform: scale(0.95);  /* Slightly smaller when pressed */
+}
+
+.book-details a.button.preview {
+    background-color: #6c757d;  /* Different color for the preview button */
+}
+
+.book-details a.button.preview:hover {
+    background-color: #5a6268;  /* Darker grey on hover */
+}
+
+.book-details a.button.preview:active {
+    background-color: #545b62;  /* Even darker grey when pressed */
+}
+
+/* Container for buttons to align them inline */
+.book-details .button-container {
+    display: flex;
+    justify-content: center;  /* Centers the buttons horizontally */
+    align-items: center;  /* Aligns the buttons vertically */
+    gap: 10px;  /* Provides space between the buttons */
 }
