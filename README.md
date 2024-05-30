@@ -11,3 +11,6 @@ A user-friendly digital system for online libraries, enabling users to access a 
 2. Go to the local host shown in your terminal
 3. Start editing the project files in your favorite code editor  
 4. Changes will be automatically hot-reloaded in the browser
+
+## For CMSC 186 Purposes
+1. Please clone the "stage" branch for the most updated version of the project.
