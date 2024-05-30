@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './search_result_component.css';
 
@@ -28,7 +28,7 @@ function Search_result_component() {
     return (
         <div className="search-result">
             {/* Show number of results and the search query */}
-            <h2 className="search-result-count">Here's what we have!</h2>
+            <h2 className="search-result-count"> <br></br><br></br>Here's what we have!</h2>
             <div className="grid-container">
                 {books.map((book, index) => (
                     <div key={index} className='grid-item' onClick={() => handleBookClick(book.id)}>
@@ -42,7 +42,7 @@ function Search_result_component() {
                 ))}
             </div>
             <button className="back-button" onClick={handleBack}>Back</button>
-        </div>       
+        </div>
     );
 }
 

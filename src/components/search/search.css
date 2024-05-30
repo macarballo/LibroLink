@@ -2,9 +2,9 @@
     background-image: url('/home-bg.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; /* Prevents repeating the background image */
-    height: 769px; /* Adjust based on your preference */
-    width: 100vw; /* This sets the width to the full viewport width */
+    background-repeat: no-repeat;
+    height: 769px; 
+    width: 100vw;
     display: flex;
     flex-direction: column;  
     margin-top: 6rem;
@@ -13,6 +13,8 @@
 .search-bar {
     display: flex;
     margin-top: 9rem;
+    flex-direction: column; /* Change to column for smaller screens */
+    align-items: center; /* Center align items for smaller screens */
 }
 
 .logos-container, .search-bar-container {
@@ -33,7 +35,7 @@
     height: 70px;
 }
 
-.search-title-container{
+.search-title-container {
     margin-top: 2.5rem;
     margin-left: 12.5rem;
     width: 705px;
@@ -60,8 +62,73 @@
     width: 140px;
     border: none;
     background-color: rgba(60, 67, 40, 1);
-    color: white; /* Button text color */
+    color: white;
     border: 1px solid rgba(0, 0, 0, 1);
     border-radius: 7px;
     cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    .search-bar {
+        margin-top: 6rem; /* Adjust for smaller screens */
+    }
+    
+    .search-title-container {
+        margin-left: 2.5rem; /* Adjust for smaller screens */
+        width: auto; /* Allow width to adjust automatically */
+    }
+    
+    .search-input {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+
+    .search-button {
+        width: 90%; /* Adjust width for smaller screens */
+        text-align: center; /* Center align text for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .logos-container {
+        flex-direction: column;
+        margin-left: 0;
+        margin-right: 0;
+        align-items: center;
+    }
+    
+    .search-title-container {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        width: auto; 
+    }
+    
+    .search-input {
+        width: 100%; 
+    }
+
+    .search-button {
+        width: 100%;
+        margin-top: 10px; /* Adjust margin for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .search-bar {
+        margin-top: 3rem; /* Adjust for extra small screens */
+    }
+    
+    .search-title-container {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+    
+    .search-input {
+        width: 100%; 
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+
+    .search-button {
+        width: 100%; 
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
 }
